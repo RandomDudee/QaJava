@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Tuesday {
 
-    public static Scanner sc = new Scanner(System.in);
 
     public static String prompt(String s) {
         return "Please enter your " + s + ": ";
@@ -14,28 +13,26 @@ public class Tuesday {
 
     }
 
-    public  static String get_user_input(){
-        return sc.next();
+    public  static String get_user_input(Scanner sc_String, String a){
+        print_prompt(a);
+        return sc_String.next();
     }
 
-    public  static int get_user_input_int() {
-        return sc.nextInt();
+    public  static int get_user_input_int(Scanner sc_int,String a) {
+        print_prompt(a);
+        return sc_int.nextInt();
     }
-
 
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
 
-        print_prompt("name");
-        String name = get_user_input();
+        String name = get_user_input( sc, "name");
 
+        int age  = get_user_input_int( sc, "age");
 
-        print_prompt("age");
-        int age = print_prompt("age")get_user_input_int();
-
-        print_prompt("score");
-        int score = get_user_input_int();
+        int score = get_user_input_int(sc, "score");
 
         System.out.println("Hello " + name + ".\nYou are " + age + " years old!" + "\nYour Score is: " + score + "!");
 
