@@ -53,7 +53,7 @@
 //            System.out.println("TOO YOUNG!");
 //        }
 //
-//        System.out.println(Tuesday.main("dave", 2, 2 ));
+//        System.out.println(.main("dave", 2, 2 ));
 ////        final String jp = "James Pond";
 ////
 ////        if (name.equalsIgnoreCase(jp)){
