@@ -8,11 +8,11 @@ public class Thursday {
 //    public static final int N = 5;
 
 
-    public  static int get_user_input_int(Scanner sc) {
+    public static int get_user_input_int(Scanner sc) {
         return sc.nextInt();
     }
 
-    public static String print_array(int[] a ) {
+    public static String print_array(int[] a) {
         String separator = "===================================\n";
         String str = separator + "Here is your Array\n" + separator;
         for (int i = 0; i < a.length; i++) {
@@ -21,16 +21,68 @@ public class Thursday {
         return str + separator;
     }
 
+    public static String elements(){
+        String el = " of elements is: ";
 
-//    public static int sum_array(int[] a){
-//        int sum = 0;
-//        for(int i  = 0; i < a.length; i++){
-//            sum +=  a[i];
-//
-//        }return sum ;
-//
-//    }
+        return el;
+    }
 
+
+    public static int array_sum(int[] a) {
+        int sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            sum += a[i];
+
+        }
+        return sum;
+
+    }
+
+    public static double array_average(int[] a) {
+
+        return array_sum(a) / a.length;
+    }
+
+    public static int array_min(int[] a) {
+        int min = a[0];
+        int max = a[0];
+        for (int i = 0; i < a.length; i++) {
+
+            if (a[i] < min) {
+                min = a[i];
+            }
+            if (a[i] > max) {
+                max = a[i];
+            }
+
+        }
+        return min;
+    }
+
+    public static int array_product(int[] a) {
+        int product = 1;
+
+        for (int i = 0; i < a.length; i++) {
+            product *= a[i];
+        }
+        return product;
+    }
+
+    public static int array_max(int[] a) {
+        int min = a[0];
+        int max = a[0];
+        for (int i = 0; i < a.length; i++) {
+
+            if (a[i] < min) {
+                min = a[i];
+            }
+            if (a[i] > max) {
+                max = a[i];
+            }
+
+        }
+        return max;
+    }
 
 
     public static void main(String[] args) {
@@ -40,8 +92,8 @@ public class Thursday {
 
 
         //input all elements of the array
-        for (int i = 0; i < a.length; i++){
-            System.out.print("Please enter element " + i + ": " );
+        for (int i = 0; i < a.length; i++) {
+            System.out.print("Please enter element " + i + ": ");
             a[i] = get_user_input_int(sc);
         }
         sc.close();
@@ -54,28 +106,28 @@ public class Thursday {
         System.out.println(print_array(a));
 
 
-        // calculate sum of array
-        int sum = 0;
-        int product = 1;
-        int min = a[0];
-        int max = a[0];
-        for(int i  = 0; i < a.length; i++){
-            product *= a[i];
-            sum = sum +  a[i];
-
-            if (a[i] < min) {
-                min = a[i];
-            }
-            if (a[i] > max) {
-                max = a[i];
-            }
-        }
-        System.out.println("\nSum of elements is " + sum);
-        System.out.println("\nProduct of elements is " + product);
-        System.out.println("\nMin of elements is " + min);
-        System.out.println("\nMax of elements is " + max);
-        double average = sum / a.length;
-        System.out.println("\nAverage of elements is " + average);
+//        // calculate sum of array
+//        int sum = 0;
+//        int product = 1;
+//        int min = a[0];
+//        int max = a[0];
+//        for(int i  = 0; i < a.length; i++){
+//            product *= a[i];
+//            sum = sum +  a[i];
+//
+//            if (a[i] < min) {
+//                min = a[i];
+//            }
+//            if (a[i] > max) {
+//                max = a[i];
+//            }
+//        }
+//        System.out.println("\nSum of elements is " + sum);
+//        System.out.println("\nProduct of elements is " + product);
+//        System.out.println("\nMin of elements is " + min);
+//        System.out.println("\nMax of elements is " + max);
+//        double average = sum / a.length;
+//        System.out.println("\nAverage of elements is " + average);
 
 //        int min = a[0];
 //        int max = a[0];
@@ -92,11 +144,14 @@ public class Thursday {
 //        System.out.println("\nMax of elements is " + max);
 
 
-
-//        System.out.println("Sum of elements is " + sum_array(a)) ;
+        System.out.println("Sum" + elements() + array_sum(a));
+        System.out.println("\nAverage" + elements() + array_average(a));
+        System.out.println("\nMin" + elements() + array_min(a));
+        System.out.println("\nMax" + elements() + array_max(a));
+        System.out.println("\nProduct" + elements() + array_product(a));
 
 //        System.out.println(a[4]);
- }
+    }
 
 
 }
