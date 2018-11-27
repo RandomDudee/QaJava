@@ -2,7 +2,7 @@ package JavaW2Day2;
 
 public class SavingsAccount extends Account {
 
-    Double interestRate;
+    double interestRate;
 
     public String info(){
         return super.info() + " and a Interest rate of " + interestRate + "%";
@@ -17,7 +17,7 @@ public class SavingsAccount extends Account {
     }
 
 
-    public SavingsAccount(String name,int balance, Double interestRate) {
+    public SavingsAccount(String name,int balance, double interestRate) {
         super(name , balance);
         this.interestRate = interestRate;
     }

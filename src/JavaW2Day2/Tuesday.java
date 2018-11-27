@@ -19,7 +19,7 @@ public class Tuesday {
         SavingsAccount c1 = new SavingsAccount("James" , 200);
         c1.printInfo();
 
-        SavingsAccount c2 = new SavingsAccount("Conor", 300,3.2);
+        SavingsAccount c2 = new SavingsAccount("Conor", 300, 3.0);
         c2.printInfo();
     }
 }
