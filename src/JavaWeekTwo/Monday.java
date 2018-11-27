@@ -14,7 +14,7 @@ public class Monday {
 
     public static void main(String[] args) {
 
-        Account a1 = new Account("Alice" , 700, 100);
+        Account a1 = new Account("Alice" , 700);
         a1.deposit(100);
         a1.withdraw(800);
         a1.withdraw(100);
@@ -30,12 +30,12 @@ public class Monday {
         System.out.println("Expected Result: " + 100 + ", Actual: " + a2.info());
 
 
-        Account a3 = new Account("John" , 100, 100);
+        Account a3 = new Account("John" , 1000);
         a3.deposit(100);
         a3.withdraw(200);
         compare(0, a3.getBalance());
 
-        Account a4 = new Account("Chris" , 0, 100);
+        Account a4 = new Account("Chris" , 0);
         a4.deposit(100);
         a4.withdraw(200);
         compare(0, a4.getBalance());

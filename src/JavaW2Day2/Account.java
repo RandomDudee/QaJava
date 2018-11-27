@@ -1,10 +1,10 @@
-package JavaWeekTwo;
+package JavaW2Day2;
+
 
 public class Account {
 
     private int balance; //Variable
     private String name;
-    private int overdraft;
 
     //Getter
     public String getName() { //Method
@@ -20,22 +20,6 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(int a) {
-        balance = a;
-    }
-
-    public void withdraw(int a) {
-        if (balance + overdraft >= a) {
-            balance = getBalance() - a;
-        } else {
-            System.out.println("Insufficient funds to withdraw ");
-        }
-    }
-
-
-    public void deposit(int a) {
-        balance = getBalance() + a;
-    }
 
     public String info() {
         return getName() + " has a balance of £" + getBalance();
@@ -46,19 +30,23 @@ public class Account {
         System.out.println(info());
     }
 
+    public void withdraw(int a) {
+        balance = balance - a;
+    }
+
+
+    public void deposit(int a) {
+        balance = balance + a;
+    }
+
     public Account(String name) { //Constructor
 
         this(name, 0);
     }
 
     public Account(String name, int balance) {
-        this(name, balance, 0);
-    }
-
-    public Account(String name, int balance, int overdraft) {
         this.name = name;
         this.balance = balance;
-        this.overdraft = overdraft;
     }
 
 
