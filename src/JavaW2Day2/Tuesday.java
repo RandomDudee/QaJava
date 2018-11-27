@@ -4,8 +4,8 @@ public class Tuesday {
 
     public static void main(String[] args) {
 
-        Account a1 = new Account("Alice");
-        System.out.println(a1.info());
+//        Account a1 = new Account("Alice"); // Account is now abstract, savings and current can access it but cannot call it directly.
+//        a1.printInfo();
 
         CurrentAccount b1 = new CurrentAccount("Bob");
         b1.printInfo();

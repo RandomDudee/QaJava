@@ -4,6 +4,7 @@ public class CurrentAccount extends Account {
 
     int overdraft;
 
+    @Override
     public String info(){
         return super.info() + " and overdraft of £" + overdraft;
     }

@@ -4,6 +4,7 @@ public class SavingsAccount extends Account {
 
     double interestRate;
 
+    @Override
     public String info(){
         return super.info() + " and a Interest rate of " + interestRate + "%";
     }

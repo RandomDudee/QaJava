@@ -1,7 +1,7 @@
 package JavaW2Day2;
 
 
-public class Account {
+public abstract class Account {
 
     private int balance; //Variable
     private String name;
