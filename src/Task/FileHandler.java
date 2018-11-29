@@ -1,71 +1,77 @@
 package Task;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Scanner;
-
 
 public class FileHandler {
 
     ArrayList<String> Lines;
 
-
-    public void read(String a){
-        // The name of the file to open.
+    public void read(String a) {
         String fileName = a;
 
-        // This will reference one line at a time
         String line = null;
 
         try {
-            // FileReader reads text files in the default encoding.
-            FileReader fileReader =
-                    new FileReader(fileName);
 
-            // Always wrap FileReader in BufferedReader.
-            BufferedReader bufferedReader =
-                    new BufferedReader(fileReader);
+            FileReader fileReader = new FileReader(fileName);
+
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             while ((line = bufferedReader.readLine()) != null) {
+
                 Lines.add(line);
+
             }
 
-            // Always close files.
             bufferedReader.close();
+
         } catch (FileNotFoundException ex) {
-            System.out.println(
-                    "Unable to open file '" +
-                            fileName + "'");
+
+            System.out.println("Unable to open file '" + fileName + "'");
+
         } catch (IOException ex) {
-            System.out.println(
-                    "Error reading file '"
-                            + fileName + "'");
-            // Or we could just do this:
-            // ex.printStackTrace();
+
+            System.out.println("Error reading file '" + fileName + "'");
+
         }
     }
 
-    public  FileHandler(String a) {
+    public FileHandler(String a) {
 
         Lines = new ArrayList<String>();
         read(a);
 
     }
 
-//
-//    public void getNumberOfWords() {
-//
+//    public int getNumberOfWords() {
+//        return Lines.toString().split("[\\s,;]").length;
 //    }
-//
-//    public void getNumberOfChars() {
-//
-//
-//    }
-//
-    public int getNumberofLines()  {
-return Lines.size();
+
+    public int getNumberOfWords() {
+
+        int count = 0;
+        String[] data = Lines.toString().split("[\\s,;]+");
+
+        for (int i = 0; i < data.length; i++) {
+            count++;
+        }
+
+        return count;
+
     }
 
+    public int getNumberOfChars() {
+        return Lines.toString().length() - 2;
+    }
+
+    public int getNumberOfLines() {
+        return Lines.size();
+    }
+
+    public void printInfo() {
+        System.out.println("The number of lines is: " + getNumberOfLines() + "\nThe number of Chars are: "
+                + getNumberOfChars() + "\nThe number of Words are: " + getNumberOfWords());
+    }
 
 }
